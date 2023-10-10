@@ -158,6 +158,7 @@
 5. /admin页面有一个submit按钮，
 
    ![image-20231010164437259](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101954629.png)
+
    在hostname处填写我们的ip，username随便，点击submit提交。从响应包的报错信息来看它尝试连接我们机器的22端口
 
    ![image-20231010164623575](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101955019.png)
@@ -165,9 +166,10 @@
 
 
 
-4. host参数有过滤机制，我在测试过程中发现输入非字母字符会报错，二username参数不允许出现空格
+4. host参数有过滤机制，我在测试过程中发现输入非字母字符会报错，而username参数不允许出现空格
 
    ![image-20231010172952323](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101958463.png)
+   
       google找到了使用 $IFS$9 的替换空格的方式
 
    ![image-20231010173537265](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101735397.png)
@@ -274,7 +276,7 @@
    postgres=# 
    ```
 
-   接下来根据hacktricks中的[postgresql-pentesting][https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql]的步骤进行测试
+   接下来根据hacktricks中的(postgresql-pentesting)[https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql]的步骤进行测试
 
    ```
    \list  #列出数据库
