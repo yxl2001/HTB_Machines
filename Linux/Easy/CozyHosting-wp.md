@@ -141,7 +141,7 @@
 
    ![image-20231010162550213](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101626751.png)
 
-   ​	在/actuator/env下发现cloudhosting-0.0.1.jar文件中似乎有用户名和密码。后来得知spring.datasource.password是sprint-boot中设置数据库密码的一种方式
+   ​	在/actuator/env下发现cloudhosting-0.0.1.jar文件中似乎有用户名和密码。后来得知spring.datasource.password是spring-boot中设置数据库密码的一种方式
 
    ![image-20231010184054148](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101842740.png)
 
@@ -276,7 +276,7 @@
    postgres=# 
    ```
 
-   接下来根据hacktricks中的(postgresql-pentesting)[https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql]的步骤进行测试
+   接下来根据hacktricks中的[postgresql-pentesting](https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql)的步骤进行测试
 
    ```
    \list  #列出数据库
