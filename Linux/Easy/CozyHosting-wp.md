@@ -157,20 +157,17 @@
 
 5. /admin页面有一个submit按钮，
 
-   ![image-20231010164437259](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231010164437259.png)
-
+   ![image-20231010164437259](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101954629.png)
    在hostname处填写我们的ip，username随便，点击submit提交。从响应包的报错信息来看它尝试连接我们机器的22端口
 
-   ![image-20231010164623575](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231010164623575.png)
-
+   ![image-20231010164623575](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101955019.png)
    猜测这边后台执行了类似  ssh <username>@<host>的指令。对host参数尝试命令注入，构造ssh username@ip;command这样的语句。
 
 
 
 4. host参数有过滤机制，我在测试过程中发现输入非字母字符会报错，二username参数不允许出现空格
 
-   ![image-20231010172952323](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231010172952323.png)
-
+   ![image-20231010172952323](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101958463.png)
       google找到了使用 $IFS$9 的替换空格的方式
 
    ![image-20231010173537265](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101735397.png)
@@ -230,8 +227,7 @@
 
 2. 在/apt找到了可能包含有密码的cloudhosting-0.0.1.jar文件，直接检索password关键字没有找到有用的信息
 
-   ![image-20231010181714148](C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231010181714148.png)
-
+   ![image-20231010181714148](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310102000973.png)
    
 
 3. google后得知jar是一种使用zip压缩算法的打包java文件的方式，使用zipgrep命令来检索压缩包中的password字符串。
