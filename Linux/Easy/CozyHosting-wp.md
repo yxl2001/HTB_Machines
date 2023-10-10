@@ -147,11 +147,11 @@
 
    ​	
 
-   3. 尝试访问self、sessions、beans这些端点，在sessions下发现一些内容。从该api端点的命名来看，应该是会话信息
+3. 尝试访问self、sessions、beans这些端点，在sessions下发现一些内容。从该api端点的命名来看，应该是会话信息
 
    ![image-20231010162708527](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101952461.png)
 
-   4. 修改/login页面的cookie为/actuator/sessions下找到的cookie，成功通过劫持cookie伪装成了kanderson用户
+4. 修改/login页面的cookie为/actuator/sessions下找到的cookie，成功通过劫持cookie伪装成了kanderson用户
 
       ![image-20231010163215689](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202310101632841.png)
 
