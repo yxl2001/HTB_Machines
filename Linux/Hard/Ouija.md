@@ -659,7 +659,7 @@
    app.get("/*", (q,r,n) => {r.json("200 not found , redirect to .");});
    ```
 
-   这里找到了http://ouija.htb:3000下的其他子目录，经验来看http://ouija.htb:3000/file/get?file= 这边也容易存在LFI漏洞，但是需要经过身份验证。
+   这里找到了 http://ouija.htb:3000 下的其他子目录，经验来看http://ouija.htb:3000/file/get?file= 这边也容易存在LFI漏洞，但是需要经过身份验证。
 
    
 
