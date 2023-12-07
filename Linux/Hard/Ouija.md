@@ -1,6 +1,6 @@
 # 概述
 
-​		首先在枚举80口的HTTP服务的web子目录的时候发现了站点的域名ouija.htb，然后枚举子域名。访问http://ouija.htb的时候发现加载了gitea.ouija.htb的资源，即发现了一个子域名。在gitea.ouija.htb中发现了一个HTTP走私请求的漏洞，利用他来走私访问dev.ouija.htb，会找到一个LFI漏洞。仔细枚举3000口的web服务，然后能再次找到一个LFI。之后利用hash length extension attack攻击获取初始立足点。特权提升部分看[暗羽佬的wp](https://darkwing.moe/2023/12/05/Ouija-HackTheBox/)。
+​		首先在枚举80口的HTTP服务的web子目录的时候发现了站点的域名ouija.htb，然后枚举子域名。访问 http://ouija.htb 的时候发现加载了gitea.ouija.htb的资源，即发现了一个子域名。在gitea.ouija.htb中发现了一个HTTP走私请求的漏洞，利用他来走私访问dev.ouija.htb，会找到一个LFI漏洞。仔细枚举3000口的web服务，然后能再次找到一个LFI。之后利用hash length extension attack攻击获取初始立足点。特权提升部分看[暗羽佬的wp](https://darkwing.moe/2023/12/05/Ouija-HackTheBox/)。
 
 
 
