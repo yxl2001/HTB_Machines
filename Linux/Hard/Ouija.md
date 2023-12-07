@@ -659,7 +659,7 @@
    app.get("/*", (q,r,n) => {r.json("200 not found , redirect to .");});
    ```
 
-   这里找到了 http://ouija.htb:3000 下的其他子目录，经验来看http://ouija.htb:3000/file/get?file= 这边也容易存在LFI漏洞，但是需要经过身份验证。
+   这里找到了 http://ouija.htb:3000 下的其他子目录，经验来看 http://ouija.htb:3000/file/get?file= 这边也容易存在LFI漏洞，但是需要经过身份验证。
 
    
 
@@ -706,14 +706,16 @@
 
    
 
-   这里无法通过http走私http://dev.ouija.htb/editor.php?file=../../../../../../opt/auth/api.key来访问得到secret，访问不到
+   这里无法通过http走私 http://dev.ouija.htb/editor.php?file=../../../../../../opt/auth/api.key 来访问得到secret，访问不到
 
    ![image-20231206220435220](https://raw.githubusercontent.com/yxl2001/Note-drawing-bed/main/images/202312072319446.png)
 
    这里可以尝试hash length extension attack，有关该技术的一些解释
 
    hash extension attack : https://book.hacktricks.xyz/crypto-and-stego/hash-length-extension-attack
+   
    IPPSEC: https://youtu.be/qNsbf3EmLrA?t=6151
+   
    一個很棒的原理：https://www.youtube.com/watch?v=uLSnwA10Qcc&t=29s
 
    
@@ -736,7 +738,7 @@
 
 
 
-2. 我们目前掌握的情况如下
+3. 我们目前掌握的情况如下
 
    数据 `bot1:bot`
 
@@ -778,18 +780,9 @@
    New string: 626f74313a626f748000000000000000000000000000000000000000000000000000000000000000000000e03a3a61646d696e3a54727565
    ```
 
-   
-
-   ```
-   Type: sha256
-   Secret length: 23
-   New signature: 14be2f4a24f876a07a5570cc2567e18671b15e0e005ed92f10089533c1830c0b
-   New string: 626f74313a626f748000000000000000000000000000000000000000000000000000000000000000f83a3a61646d696e3a54727565
-   ```
 
 
-
-3. 3000口的/file/get访问的时候需要经过身份验证，检验流程如下
+4. 3000口的/file/get访问的时候需要经过身份验证，检验流程如下
 
    ```js
    //解码 Base64 编码的字符串，将其转换为小写，然后将其解释为十六进制字符串。结果被返回。
@@ -862,7 +855,7 @@
 
    
 
-4. 将hash_extender的结果保存到一个文件中，然后利用一个简单的脚本来测试哪个secret可用。
+5. 将hash_extender的结果保存到一个文件中，然后利用一个简单的脚本来测试哪个secret可用。
 
    ```
    ┌──(root㉿kali)-[/tmp]
@@ -927,7 +920,7 @@
            pass
    ```
 
-5. 运行该脚本得到有效的ihash和identification
+6. 运行该脚本得到有效的ihash和identification
 
    ```
    ┌──(root㉿kali)-[/tmp]
